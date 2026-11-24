@@ -1,0 +1,111 @@
+/* Design tokens: cores, tipografia, espaçamento, raios, sombras e movimento. */
+:root {
+  color-scheme: light;
+  --font: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --paper: #F7F8FA;
+  --surface: #FFFFFF;
+  --surface-2: #FBFCFD;
+  --ink: #0F1B26;
+  --ink-2: #475467;
+  --ink-3: #5F6E7D;
+  --line: #E6EAEE;
+  --line-2: #D3DAE0;
+
+  --accent: #0E6B66;
+  --accent-2: #1D5D8C;
+  --accent-soft: #E4F1EF;
+  --on-accent: #FFFFFF;
+  --gradient: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+  --gradient-soft: linear-gradient(135deg, #EAF5F3 0%, #EAF1F8 100%);
+
+  --stage-1: #BFDCD8;
+  --stage-2: #86BDB7;
+  --stage-3: #43968F;
+  --stage-4: #0E6B66;
+  --won: #2F8A57;
+  --won-soft: #E6F4EC;
+  --lost: #B0444D;
+  --lost-soft: #FBECED;
+  --warn: #C98A2B;
+
+  --radius-sm: 6px;
+  --radius: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 72px;
+  --space-9: 112px;
+
+  --shadow-xs: 0 1px 2px rgba(16, 27, 38, .05);
+  --shadow-sm: 0 1px 2px rgba(16, 27, 38, .04), 0 2px 6px rgba(16, 27, 38, .05);
+  --shadow-md: 0 6px 16px -4px rgba(16, 27, 38, .10), 0 2px 4px rgba(16, 27, 38, .04);
+  --shadow-lg: 0 28px 56px -16px rgba(16, 27, 38, .22), 0 4px 12px rgba(16, 27, 38, .05);
+
+  /* Tipografia fluida: cresce suavemente entre celular e desktop. */
+  --fs-xs: clamp(11.5px, .7rem + .12vw, 12.5px);
+  --fs-sm: clamp(12.5px, .76rem + .14vw, 13.5px);
+  --fs-base: clamp(14px, .84rem + .16vw, 15px);
+  --fs-md: clamp(15px, .88rem + .32vw, 17px);
+  --fs-lg: clamp(16px, .92rem + .45vw, 19px);
+  --fs-xl: clamp(22px, 1.15rem + 1.1vw, 30px);
+  --fs-2xl: clamp(26px, 1.25rem + 1.7vw, 38px);
+  --fs-display: clamp(36px, 1.4rem + 3.1vw, 58px);
+  --lh-tight: 1.04;
+  --lh-snug: 1.2;
+
+  /* Séries de gráficos (validadas para contraste e daltonismo). */
+  --series-1: #00897B;
+  --series-2: #3F7BD6;
+
+  --ease: cubic-bezier(.2, .8, .2, 1);
+  --fast: .15s;
+  --gutter: var(--space-6);
+}
+
+:root.theme-dark {
+    --series-1: #1FA394;
+    --series-2: #5E8FE6;
+    color-scheme: dark;
+    --paper: #070C11;
+    --surface: #0E151C;
+    --surface-2: #121A22;
+    --ink: #EDF2F6;
+    --ink-2: #A7B3BF;
+    --ink-3: #8794A2;
+    --line: #19232D;
+    --line-2: #283542;
+    --accent: #5FB8AF;
+    --accent-2: #5D9BD0;
+    --accent-soft: #15302E;
+    --on-accent: #0C1218;
+    --gradient-soft: linear-gradient(135deg, #12292A 0%, #142233 100%);
+    --stage-1: #24403F;
+    --stage-2: #2F6662;
+    --stage-3: #3E8D86;
+    --stage-4: #5FB8AF;
+    --won: #5DBB84;
+    --won-soft: #15301F;
+    --lost: #E07C83;
+    --lost-soft: #3A1F23;
+    --warn: #E0A955;
+    --shadow-xs: 0 1px 2px rgba(0, 0, 0, .3);
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, .3);
+    --shadow-md: 0 8px 20px -6px rgba(0, 0, 0, .5);
+    --shadow-lg: 0 28px 56px -16px rgba(0, 0, 0, .6);
+  }
+
+/* Troca de tema suave (só durante a troca; ver useTheme). */
+.theme-transition,
+.theme-transition *,
+.theme-transition *::before,
+.theme-transition *::after {
+  transition: background-color .3s ease, color .3s ease, border-color .3s ease, fill .3s ease !important;
+}

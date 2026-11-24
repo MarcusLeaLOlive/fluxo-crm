@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>%SITE_TITLE%</title>
+    <meta name="description" content="%SITE_DESCRIPTION%" />
+    <link rel="canonical" href="%SITE_URL%/" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="%SITE_AUTHOR%" />
+
+    <meta name="theme-color" content="#F7F8FA" />
+    <meta name="color-scheme" content="light dark" />
+    <!-- Aplica o tema salvo antes da primeira pintura, evitando o "piscar". -->
+    <script>
+      (function () {
+        var dark;
+        try {
+          var saved = localStorage.getItem("fluxo-theme");
+          dark = saved ? saved === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+        } catch (e) {
+          dark = matchMedia("(prefers-color-scheme: dark)").matches;
+        }
+        document.documentElement.classList.toggle("theme-dark", dark);
+        document.querySelector('meta[name="theme-color"]').content = dark ? "#070C11" : "#F7F8FA";
+      })();
+    </script>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="%SITE_URL%/" />
+    <meta property="og:title" content="%SITE_TITLE%" />
+    <meta property="og:description" content="%SITE_DESCRIPTION%" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Fluxo" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="%SITE_TITLE%" />
+    <meta name="twitter:description" content="%SITE_DESCRIPTION%" />
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%230E6B66'/%3E%3Cstop offset='1' stop-color='%231D5D8C'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='28' height='28' rx='8' fill='url(%23g)'/%3E%3Crect x='6.5' y='8.5' width='15' height='2.6' rx='1.3' fill='%23fff' opacity='.55'/%3E%3Crect x='8.5' y='12.8' width='11' height='2.6' rx='1.3' fill='%23fff' opacity='.8'/%3E%3Crect x='10.5' y='17.1' width='7' height='2.6' rx='1.3' fill='%23fff'/%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Dados estruturados: site, página, aplicação e autor, ligados por @id. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "%SITE_URL%/#website",
+            "url": "%SITE_URL%/",
+            "name": "Fluxo",
+            "description": "%SITE_DESCRIPTION%",
+            "inLanguage": "pt-BR",
+            "author": { "@id": "%SITE_URL%/#autor" }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "%SITE_URL%/#pagina",
+            "url": "%SITE_URL%/",
+            "name": "%SITE_TITLE%",
+            "description": "%SITE_DESCRIPTION%",
+            "inLanguage": "pt-BR",
+            "isPartOf": { "@id": "%SITE_URL%/#website" },
+            "about": { "@id": "%SITE_URL%/#aplicacao" },
+            "mainEntity": { "@id": "%SITE_URL%/#aplicacao" }
+          },
+          {
+            "@type": "WebApplication",
+            "@id": "%SITE_URL%/#aplicacao",
+            "name": "Fluxo",
+            "url": "%SITE_URL%/#app",
+            "description": "CRM de funil de vendas para pequenas equipes comerciais: funil arrastável, previsão de receita, painel com gráficos, atividades e exportação CSV.",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Qualquer navegador moderno",
+            "browserRequirements": "Requer JavaScript",
+            "inLanguage": "pt-BR",
+            "isAccessibleForFree": true,
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" },
+            "featureList": [
+              "Funil de vendas arrastável",
+              "Previsão de receita ponderada",
+              "Painel com gráficos",
+              "Atividades e alertas",
+              "Formulários validados",
+              "Exportação CSV",
+              "Tema claro e escuro"
+            ],
+            "author": { "@id": "%SITE_URL%/#autor" }
+          },
+          {
+            "@type": "Person",
+            "@id": "%SITE_URL%/#autor",
+            "name": "%SITE_AUTHOR%",
+            "url": "%SITE_URL%/#sobre"
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      <p>Fluxo é um CRM de funil de vendas feito em React. Ative o JavaScript para usar a demonstração.</p>
+    </noscript>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
