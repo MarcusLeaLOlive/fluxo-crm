@@ -16,4 +16,4 @@ if (!html.includes(marker)) throw new Error("Marcador <div id=\"root\"></div> n�
 
 await writeFile(htmlPath, html.replace(marker, `<div id="root">${render()}</div>`));
 await rm(path.join(root, "dist-ssr"), { recursive: true, force: true });
-console.log("✓ Apresentação pré-renderizada em dist/index.html");
+console.log("OK: apresentação pré-renderizada em dist/index.html");

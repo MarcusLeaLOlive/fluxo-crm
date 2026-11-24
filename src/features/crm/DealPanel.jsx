@@ -47,7 +47,7 @@ function StagePicker({ value, onChange }) {
             data-stage={stage.key}
             onClick={() => onChange(stage.key)}
           >
-            {i < 4 ? i + 1 : stage.key === "ganho" ? "✓" : "✕"}
+            {i < 4 ? i + 1 : <Icon name={stage.key === "ganho" ? "check" : "close"} size={12} strokeWidth={2.2} />}
           </button>
         ))}
       </div>

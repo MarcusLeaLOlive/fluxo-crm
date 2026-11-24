@@ -1,6 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot, hydrateRoot } from "react-dom/client";
 import App from "./App.jsx";
+import { installGlobalErrorHandlers } from "./lib/errors.js";
 import "./styles/tokens.css";
 import "./styles/base.css";
 import "./styles/components.css";
@@ -9,6 +10,8 @@ import "./styles/landing.css";
 import "./styles/motion.css";
 import "./styles/effects.css";
 import "./styles/features.css";
+
+installGlobalErrorHandlers();
 
 const container = document.getElementById("root");
 const app = (

@@ -1,6 +1,7 @@
 import { createContext, useCallback, useContext, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { Icon } from "./Icon.jsx";
+import { APP_ERROR_EVENT } from "../../lib/errors.js";
 
 const ToastContext = createContext(() => {});
 const ICONS = { success: "check", error: "alert", info: null };
@@ -25,6 +26,13 @@ export function ToastProvider({ children }) {
   );
 
   useEffect(() => () => clearTimeout(timer.current), []);
+
+  // Erros inesperados (ver lib/errors.js) viram um aviso discreto, sem travar a tela.
+  useEffect(() => {
+    const onError = () => toast("Algo não saiu como esperado. Se persistir, recarregue a página.", { type: "error" });
+    window.addEventListener(APP_ERROR_EVENT, onError);
+    return () => window.removeEventListener(APP_ERROR_EVENT, onError);
+  }, [toast]);
 
   return (
     <ToastContext.Provider value={toast}>

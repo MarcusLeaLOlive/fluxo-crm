@@ -105,6 +105,15 @@ O script busca os arquivos como um robô (HTML bruto, sem JavaScript) e confere 
 
 Edite `src/config/site.js` com o endereço publicado (`url`), seu e-mail, WhatsApp e links (GitHub, LinkedIn, repositório). Links vazios não aparecem no site.
 
+## Documentação
+
+- [PRODUCT.md](PRODUCT.md): visão, público, funcionalidades e próximos passos.
+- [DESIGN.md](DESIGN.md): cores, tipografia, componentes e movimento.
+- [docs/arquitetura.md](docs/arquitetura.md): camadas, fluxo de dados e build.
+- [docs/banco-de-dados.md](docs/banco-de-dados.md): tabelas e segurança no Supabase.
+- [docs/deploy.md](docs/deploy.md): publicação na Vercel e variáveis de ambiente.
+- [CLAUDE.md](CLAUDE.md): regras do repositório para agentes de IA.
+
 ## Licença
 
 © Marcus Leal. Todos os direitos reservados.

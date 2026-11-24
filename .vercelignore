@@ -1,0 +1,13 @@
+# Arquivos que não precisam ser enviados para o build na Vercel
+node_modules
+dist
+dist-ssr
+coverage
+.env
+.env.*
+!.env.example
+docs
+supabase
+src/**/__tests__
+*.log
+.DS_Store

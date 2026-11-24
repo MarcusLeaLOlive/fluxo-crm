@@ -213,3 +213,12 @@ mark { padding: 0 1px; color: inherit; background: color-mix(in srgb, var(--warn
 .auth-notice__icon { display: grid; place-items: center; width: 48px; height: 48px; color: #fff; background: var(--won); border-radius: 50%; }
 .auth-notice h2 { font-size: var(--fs-xl); font-weight: 600; letter-spacing: -.03em; }
 .auth-notice p { color: var(--ink-2); }
+
+/* 10. Tela de recuperação de erro ---------------------------------------------- */
+.crash { min-height: 70vh; display: grid; place-content: center; gap: var(--space-3); padding: var(--space-6); text-align: center; }
+.crash h1 { font-size: var(--fs-2xl); }
+.crash p { max-width: 46ch; color: var(--ink-2); }
+.crash__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-2); margin-top: var(--space-3); }
+
+.app-loading { min-height: 100vh; display: flex; align-items: center; justify-content: center; gap: var(--space-3); color: var(--ink-2); }
+.app-loading .spinner { color: var(--accent); }

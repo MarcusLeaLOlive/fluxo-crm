@@ -17,9 +17,9 @@ if (!/^https?:\/\//.test(base)) {
 }
 
 const results = [];
-const pass = (msg) => results.push(["✓", msg]);
-const fail = (msg) => results.push(["✗", msg]);
-const warn = (msg) => results.push(["!", msg]);
+const pass = (msg) => results.push(["OK   ", msg]);
+const fail = (msg) => results.push(["FALHA", msg]);
+const warn = (msg) => results.push(["AVISO", msg]);
 const check = (ok, msg, detail = "") => (ok ? pass(msg) : fail(detail ? `${msg} (${detail})` : msg));
 
 async function get(url) {
@@ -143,8 +143,8 @@ for (const link of links) {
 }
 
 /* ---------- Relatório ---------- */
-const failures = results.filter(([s]) => s === "✗").length;
-const warnings = results.filter(([s]) => s === "!").length;
+const failures = results.filter(([s]) => s === "FALHA").length;
+const warnings = results.filter(([s]) => s === "AVISO").length;
 console.log(`\nValidação de SEO: ${base}\n`);
 for (const [symbol, message] of results) console.log(`  ${symbol} ${message}`);
 console.log(`\n${results.length - failures - warnings} ok, ${failures} falha(s), ${warnings} aviso(s)\n`);

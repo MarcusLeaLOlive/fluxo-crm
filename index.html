@@ -32,11 +32,20 @@
     <meta property="og:description" content="%SITE_DESCRIPTION%" />
     <meta property="og:locale" content="pt_BR" />
     <meta property="og:site_name" content="Fluxo" />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content="%SITE_URL%/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Fluxo: funil de vendas claro, do primeiro contato ao contrato." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="%SITE_URL%/og-image.png" />
     <meta name="twitter:title" content="%SITE_TITLE%" />
     <meta name="twitter:description" content="%SITE_DESCRIPTION%" />
 
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%230E6B66'/%3E%3Cstop offset='1' stop-color='%231D5D8C'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='28' height='28' rx='8' fill='url(%23g)'/%3E%3Crect x='6.5' y='8.5' width='15' height='2.6' rx='1.3' fill='%23fff' opacity='.55'/%3E%3Crect x='8.5' y='12.8' width='11' height='2.6' rx='1.3' fill='%23fff' opacity='.8'/%3E%3Crect x='10.5' y='17.1' width='7' height='2.6' rx='1.3' fill='%23fff'/%3E%3C/svg%3E" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -64,6 +73,7 @@
             "inLanguage": "pt-BR",
             "isPartOf": { "@id": "%SITE_URL%/#website" },
             "about": { "@id": "%SITE_URL%/#aplicacao" },
+            "primaryImageOfPage": { "@type": "ImageObject", "url": "%SITE_URL%/og-image.png", "width": 1200, "height": 630 },
             "mainEntity": { "@id": "%SITE_URL%/#aplicacao" }
           },
           {

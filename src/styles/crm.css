@@ -174,7 +174,7 @@ tbody tr:last-child td { border-bottom: none; }
 .cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 
 .stage-picker { display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px; }
-.stage-picker button {
+.stage-picker button { display: grid; place-items: center;
   height: 34px; border-radius: 7px;
   font-size: 12px; font-weight: 600; color: var(--ink-3);
   background: var(--line);
